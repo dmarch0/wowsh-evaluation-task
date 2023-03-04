@@ -12,7 +12,7 @@ FROM nginx:stable-alpine
 
 COPY --from=build /app/web-client/dist /bin/www
 
-COPY web-client/build/staging/nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./web-client/build/staging/nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
