@@ -24,6 +24,7 @@ services:
       dockerfile: build/staging/Dockerfile
     networks:
       - staging
+    restart: always
     labels:
       - traefik.enable=true
       - traefik.docker.network=traefik
@@ -33,6 +34,7 @@ services:
       - traefik.http.services.core.loadbalancer.server.port=3001
 
   web-client:
+    restart: always
     build:
       context: ../../services
       dockerfile: web-client/build/staging/Dockerfile
