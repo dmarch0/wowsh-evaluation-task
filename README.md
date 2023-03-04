@@ -11,7 +11,6 @@
 `deploy` contains deploy related configuration: compose files, local compose files and local .env
 
 ### TODO
-1. Finish frontend display and logic
-2. Create local deploy config
-3. Create staging deploy config and pipelines
-4. Add backend caching and request layer
+1. Add loader to frontend table
+2. Add slider to filter by ship tier
+3. Add error handling modal for failed requests
