@@ -1,0 +1,25 @@
+@use 'src/styles/rem' as *;
+
+.InputWrapper {
+
+
+  .Label {
+    margin-bottom: rem(8px);
+    display: block;
+  }
+
+  .Input {
+    padding: rem(8px);
+    width: 100%;
+    margin: 0;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0);
+    background: var(--grey2);
+    border-radius: rem(8px);
+
+    &:hover {
+      border: 1px solid var(--light-blue);
+    }
+  }
+}
+

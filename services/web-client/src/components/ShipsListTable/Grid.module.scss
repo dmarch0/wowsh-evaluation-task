@@ -1,0 +1,8 @@
+@use 'src/styles/rem' as *;
+
+.ShipListTableGrid {
+  display: grid;
+  grid-template-areas: "contour title type nation level actions";
+  grid-template-columns: rem(160px) 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+}

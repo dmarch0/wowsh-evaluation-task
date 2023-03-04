@@ -1,0 +1,45 @@
+@use 'src/styles/rem' as *;
+
+.BadgesWrapper {
+
+
+  .BadgesListWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: rem(8px);
+
+    .Badge {
+      background: var(--grey2);
+      padding: rem(8px);
+      margin-right: rem(4px);
+      margin-bottom: rem(4px);
+      border-radius: rem(8px);
+      cursor: pointer;
+
+      &:hover {
+        background: var(--grey3);
+      }
+
+      &.red {
+        background: var(--red1);
+      }
+
+      &.blue {
+        background: var(--blue1);
+      }
+
+      &.green {
+        background: var(--green1);
+      }
+
+      &.orange {
+        background: var(--orange1);
+      }
+
+      &.purple {
+        background: var(--purple1);
+      }
+    }
+  }
+}
+

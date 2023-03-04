@@ -1,0 +1,35 @@
+log:
+  level: DEBUG
+
+api:
+  dashboard: true
+  insecure: true
+
+certificatesResolvers:
+  reg:
+    acme:
+      email: daniil2305@yandex.ru
+      storage: /letsencrypt/acme.json
+      dnsChallenge:
+        provider: regru
+
+
+providers:
+  docker:
+    network: traefik
+    exposedbydefault: false
+
+
+entrypoints:
+  http:
+    address: :80
+    http:
+      redirections:
+        entryPoint:
+          to: https
+          scheme: https
+          permanent: true
+  https:
+    address: :443
+
+accesslog: true

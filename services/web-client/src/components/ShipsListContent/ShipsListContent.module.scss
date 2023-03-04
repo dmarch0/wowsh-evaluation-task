@@ -1,0 +1,8 @@
+@use '../../styles/rem' as *;
+
+div.ShipsListContentWrapper {
+  grid-area: content;
+  margin: rem(8px);
+  display: flex;
+  flex-direction: column;
+}

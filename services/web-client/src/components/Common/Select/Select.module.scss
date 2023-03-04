@@ -1,0 +1,66 @@
+@use 'src/styles/rem' as *;
+@use 'src/styles/scrollbars' as *;
+
+.SelectWrapper {
+  width: 100%;
+  position: relative;
+
+  .SelectPreview {
+    padding: rem(8px);
+    border-radius: rem(8px);
+    background: var(--grey2);
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0);
+
+    &:hover {
+      background: var(--grey3);
+      border: 1px solid var(--light-blue);
+      transition: border 0.1s ease;
+    }
+
+    &.IsOpen {
+      border: 1px solid var(--light-blue);
+    }
+
+    .SelectPreviewContent {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .DropDownButton {
+      width: rem(24px);
+      height: rem(24px);
+      cursor: pointer;
+      transform: scale(1);
+      transition: transform 0.2s ease;
+
+      &.IsOpen {
+        transform: scale(-1);
+      }
+    }
+
+  }
+
+  .DropDown {
+    background: var(--grey2);
+    width: 100%;
+    max-height: rem(200px);
+    overflow-y: scroll;
+    border-radius: rem(8px);
+
+    @include scrollbars();
+
+    .Option {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: rem(8px);
+
+      &:hover {
+        background: var(--grey3);
+      }
+    }
+  }
+}

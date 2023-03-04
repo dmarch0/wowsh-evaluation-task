@@ -1,0 +1,19 @@
+@use 'src/styles/rem' as *;
+
+div.ShipsListPaginationWrapper {
+  background: var(--white);
+  margin-top: rem(8px);
+  padding: rem(8px);
+  border-radius: rem(8px);
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .PaginationControls {
+
+    .PrevButton {
+      margin-right: rem(8px);
+    }
+  }
+}

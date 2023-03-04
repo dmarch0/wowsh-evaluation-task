@@ -1,0 +1,30 @@
+:root {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+
+    body {
+        background: var(--grey1);
+    }
+
+    --text-primary: #000000;
+
+    --black: #000000;
+    --white: #FFFFFF;
+    --grey1: rgb(246, 246, 246);
+    --grey2: rgb(234, 234, 234);
+    --grey3: rgba(0, 0, 0, 0.1);
+    --grey4: rgba(0, 0, 0, 0.5);
+    --light-blue: rgb(93, 184, 255);
+
+    --red1: #ffcdd2;
+    --blue1: #c5cae9;
+    --green1: #c8e6c9;
+    --orange1: #ffe0b2;
+    --purple1: #d1c4e9;
+
+    * {
+        margin: 0;
+        box-sizing: border-box;
+    }
+}
+

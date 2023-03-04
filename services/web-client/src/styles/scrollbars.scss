@@ -1,0 +1,20 @@
+@use 'src/styles/rem' as *;
+
+@mixin scrollbars() {
+  /*
+    I know scrollbar styles don't work in Firefox and overall is not standart
+    But for the sake of simplicity in this project I think it's okay to use them
+  */
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar {
+    width: rem(8px);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--grey4);
+  }
+}

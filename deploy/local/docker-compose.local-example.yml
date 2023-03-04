@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  proxy:
+    build: ../../services/proxy/local
+    restart: unless-stopped
+    networks:
+      - base
+    ports:
+      - "3000:80"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+  core:
+    build:
+      context: ../../services/core
+      dockerfile: build/local/Dockerfile
+    networks:
+      - base
+    volumes:
+      - ../../services/core:/app
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=traefik
+      - traefik.http.routers.core.rule=Host(`localhost`) && PathPrefix(`/api`)
+      - traefik.http.routers.core.entrypoints=http
+      - traefik.http.services.core.loadbalancer.server.port=3001
+
+  web-client:
+    build:
+      context: ../../services/web-client
+      dockerfile: build/local/Dockerfile
+    networks:
+      - base
+    volumes:
+      - ../../services/web-client:/app
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=traefik
+      - traefik.http.routers.web-client.rule=Host(`localhost`)
+      - traefik.http.routers.web-client.entrypoints=http
+      - traefik.http.services.web-client.loadbalancer.server.port=3000
+
+networks:
+  base:

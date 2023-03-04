@@ -1,0 +1,19 @@
+@use '../../styles/rem' as *;
+
+div.ShipsListFiltersWrapper {
+  grid-area: sidepanel;
+  margin: rem(8px);
+  padding: rem(16px);
+  border-radius: rem(8px);
+  background: var(--white);
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.05);
+
+  .Filter {
+    margin: rem(12px 0);
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+

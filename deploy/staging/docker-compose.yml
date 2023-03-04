@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  traefik:
+    build: ../../services/proxy/staging
+    container_name: traefik
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+      - 127.0.0.1:8080:8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /data/letsencrypt:/letsencrypt
+    networks:
+      - staging
+    environment:
+      - REGRU_USERNAME
+      - REGRU_PASSWORD
+
+  core:
+    build:
+      context: ../../services/core
+      dockerfile: build/staging/Dockerfile
+    networks:
+      - staging
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=traefik
+      - traefik.http.routers.core.rule=Host(`localhost`) && PathPrefix(`/api`)
+      - traefik.http.routers.core.entrypoints=https
+      - traefik.http.routers.core.tls.certresolver=reg
+      - traefik.http.services.core.loadbalancer.server.port=3001
+
+  web-client:
+    build:
+      context: ../../services/web-client
+      dockerfile: build/staging/Dockerfile
+    networks:
+      - staging
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=traefik
+      - traefik.http.routers.web-client.rule=Host(`localhost`)
+      - traefik.http.routers.web-client.entrypoints=https
+      - traefik.http.routers.web-client.tls.certresolver=reg
+      - traefik.http.services.web-client.loadbalancer.server.port=3000
+
+networks:
+  staging:

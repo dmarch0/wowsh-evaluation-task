@@ -1,0 +1,30 @@
+@use 'src/styles/rem' as *;
+
+.ShipsListTableHeader {
+  border-bottom: 1px solid var(--grey2);
+  padding: rem(12px 0);
+
+  .TitleColumn,
+  .TypeColumn,
+  .LevelColumn,
+  .NationColumn {
+    padding: rem(0 8px);
+  }
+
+  .TitleColumn {
+    grid-area: title;
+  }
+
+  .TypeColumn {
+    grid-area: type;
+  }
+
+  .LevelColumn {
+    grid-area: level;
+  }
+
+  .NationColumn {
+    grid-area: nation;
+  }
+}
+

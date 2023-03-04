@@ -1,0 +1,19 @@
+@use 'src/styles/rem' as *;
+
+.ShipsListTableRow {
+  min-height: rem(50px);
+
+  .Cell {
+    padding: rem(8px);
+  }
+
+  &:hover {
+    background: var(--grey1);
+  }
+
+  .ContourCell {
+    max-width: rem(160px);
+  }
+
+  border-bottom: 1px solid var(--grey2);
+}

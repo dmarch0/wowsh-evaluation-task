@@ -1,0 +1,14 @@
+@use '../../styles/rem' as *;
+
+div.Header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: rem(8px);
+    padding: rem(0 24px);
+    border-radius: rem(8px);
+    background: var(--white);
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.05);
+}

@@ -1,0 +1,25 @@
+@use 'src/styles/rem' as *;
+
+.Simple {
+  background: none;
+  outline: none;
+  border: none;
+  padding: 0;
+}
+
+.Primary {
+  background: var(--grey2);
+  border: none;
+  outline: none;
+  padding: rem(6px);
+  border-radius: rem(4px);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--grey3);
+  }
+}
+
+.Disabled {
+  opacity: 0.5;
+}

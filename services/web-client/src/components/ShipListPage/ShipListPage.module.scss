@@ -1,0 +1,11 @@
+@use 'src/styles/rem.scss' as *;
+
+.ShipListPageWrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template: 
+        "header header" rem(100px)
+        "sidepanel content" calc(100% - 100px) / rem(350px 1fr);
+}

@@ -1,0 +1,19 @@
+@use '../../../styles/rem' as *;
+
+.MainHeader {
+    color: var(--text-primary);
+    font-size: rem(30px);
+    opacity: 0.6;
+}
+
+.SubHeader {
+    color: var(--text-primary);
+    font-size: rem(24px);
+    opacity: 0.6;
+}
+
+.Label {
+    color: var(--text-primary);
+    opacity: 0.6;
+    font-size: rem(24px);
+}

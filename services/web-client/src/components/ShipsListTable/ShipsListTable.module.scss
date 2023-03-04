@@ -1,0 +1,12 @@
+@use 'src/styles/rem' as *;
+@use 'src/styles/scrollbars' as *;
+
+.ShipsListTableWrapper {
+  border-radius: rem(8px);
+  background: var(--white);
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.05);
+  overflow-y: scroll;
+  flex: 1;
+
+  @include scrollbars();
+}
