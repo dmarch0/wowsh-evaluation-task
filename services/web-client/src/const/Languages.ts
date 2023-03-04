@@ -25,7 +25,7 @@ export const LanguageOptions = [
     preview: 'ภาษาไทย'
   },
   {
-    value: 'pt',
+    value: 'pt_br',
     label: 'Português',
     preview: 'Português'
   },
