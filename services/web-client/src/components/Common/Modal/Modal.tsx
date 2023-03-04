@@ -1,5 +1,5 @@
 import React from 'react'
-import * as ReactModal from 'react-modal'
+import ReactModal from 'react-modal'
 
 import type { Props } from './Modal.types'
 
