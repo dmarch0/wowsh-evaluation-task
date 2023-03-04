@@ -27,7 +27,7 @@ services:
     labels:
       - traefik.enable=true
       - traefik.docker.network=traefik
-      - traefik.http.routers.core.rule=Host(`localhost`) && PathPrefix(`/api`)
+      - traefik.http.routers.core.rule=Host(`wowsh-evaluation-task.eclipseeclipseeclipse.xyz`) && PathPrefix(`/api`)
       - traefik.http.routers.core.entrypoints=https
       - traefik.http.routers.core.tls.certresolver=reg
       - traefik.http.services.core.loadbalancer.server.port=3001
@@ -41,7 +41,7 @@ services:
     labels:
       - traefik.enable=true
       - traefik.docker.network=traefik
-      - traefik.http.routers.web-client.rule=Host(`localhost`)
+      - traefik.http.routers.web-client.rule=Host(`wowsh-evaluation-task.eclipseeclipseeclipse.xyz`)
       - traefik.http.routers.web-client.entrypoints=https
       - traefik.http.routers.web-client.tls.certresolver=reg
       - traefik.http.services.web-client.loadbalancer.server.port=3000
