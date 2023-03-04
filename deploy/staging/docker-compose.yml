@@ -34,8 +34,8 @@ services:
 
   web-client:
     build:
-      context: ../../services/web-client
-      dockerfile: build/staging/Dockerfile
+      context: ../../services
+      dockerfile: web-client/build/staging/Dockerfile
     networks:
       - staging
     labels:
