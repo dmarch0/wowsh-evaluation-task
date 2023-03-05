@@ -28,23 +28,23 @@ const Select: React.FC<Props> = (props) => {
   const selectedOption = useMemo(() => options.find(o => o.value === value), [value, options])
 
   return (
-    <div className={cn(styles.SelectWrapper, classes?.wrapper)}>
+    <div
+      className={cn(styles.SelectWrapper, classes?.wrapper)}
+      ref={refs.reference as React.MutableRefObject<HTMLDivElement>}
+    >
       {label}
-      <div 
-        className={cn(styles.SelectPreview, { [styles.IsOpen]: isDropdownOpen })} 
-        ref={refs.reference as React.MutableRefObject<HTMLDivElement>}
+      <Button
+        simple
+        onClick={onToggleClick}
+        className={cn(styles.SelectPreview, { [styles.IsOpen]: isDropdownOpen })}
       >
         <div className={styles.SelectPreviewContent}>
           {selectedOption?.preview ?? placeholder}
         </div>
-        <Button
-          onClick={onToggleClick}
-          simple
-          className={cn(styles.DropDownButton, { [styles.IsOpen]: isDropdownOpen })}
-        >
+        <div className={cn(styles.DropDownButton, { [styles.IsOpen]: isDropdownOpen })}>
           <ArrowDownIcon />
-        </Button>
-      </div>
+        </div>
+      </Button>
       {isDropdownOpen && (
         <div
           ref={refs.floating as React.MutableRefObject<HTMLDivElement>}

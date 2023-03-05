@@ -18,8 +18,16 @@ const ShipsListPagination: React.FC = () => {
     setOffset(offset - limit)
   }
 
+  const onGoFirst = (): void => {
+    setOffset(0)
+  }
+
   const onGoNext = (): void => {
     setOffset(offset + limit)
+  }
+
+  const onGoLast = (): void => {
+    setOffset(Math.floor(totalCount / limit) * limit)
   }
 
   const isAbleToGoPrevious = offset > 0
@@ -28,11 +36,17 @@ const ShipsListPagination: React.FC = () => {
   return (
     <div className={styles.ShipsListPaginationWrapper}>
       <div className={styles.PaginationControls}>
+        <Button onClick={onGoFirst} primary className={styles.PrevButton} disabled={!isAbleToGoPrevious}>
+          First
+        </Button>
         <Button onClick={onGoPrevious} primary className={styles.PrevButton} disabled={!isAbleToGoPrevious}>
           Previous
         </Button>
-        <Button onClick={onGoNext} primary disabled={!isAbleToGoNext}>
+        <Button onClick={onGoNext} primary className={styles.PrevButton} disabled={!isAbleToGoNext}>
           Next
+        </Button>
+        <Button onClick={onGoLast} primary disabled={!isAbleToGoNext}>
+          Last
         </Button>
       </div>
       <div className={styles.PaginationCounter}>

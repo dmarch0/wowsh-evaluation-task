@@ -21,10 +21,12 @@ export interface UpdateShipsListProps {
   nations: Nations[]
   name: string
   offset: number
+  minLevel: number
+  maxLevel: number
 }
 
 export type UpdateShipsList = (props: UpdateShipsListProps) => Promise<void>
-export type DebouncedUpdateShipsList = UpdateShipsList & { clear(): void }
+export type DebouncedUpdateShipsList = UpdateShipsList & { clear: () => void }
 
 export interface ShipsListActions {
   updateShipsList: UpdateShipsList

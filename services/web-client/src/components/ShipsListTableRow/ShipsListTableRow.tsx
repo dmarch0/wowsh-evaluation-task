@@ -1,18 +1,19 @@
 import React, { useState } from 'react'
 import { arabToRoman } from 'roman-numbers'
-
-import type { Props } from './ShipsListTableRow.types'
-
 import { useRecoilValue } from 'recoil'
+import cn from 'classnames'
+
 import { Language } from 'state/Language'
+
+import { Button } from 'components/Common/Button'
+import { ShipInfoModal } from 'components/ShipInfoModal'
+
+import { NationLabels } from 'const/Nations'
 import { IMAGES_API_ROOT } from 'const/API'
 
 import gridStyles from 'components/ShipsListTable/Grid.module.scss'
 import styles from './ShipsListTableRow.module.scss'
-import cn from 'classnames'
-import { NationLabels } from '../../const/Nations'
-import { Button } from '../Common/Button'
-import { ShipInfoModal } from '../ShipInfoModal'
+import type { Props } from './ShipsListTableRow.types'
 
 const ShipsListTableRow: React.FC<Props> = (props) => {
   const { ship } = props

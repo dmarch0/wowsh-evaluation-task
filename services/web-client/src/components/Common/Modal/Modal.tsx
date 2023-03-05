@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactModal from 'react-modal'
+import cn from 'classnames'
 
 import type { Props } from './Modal.types'
 
 import styles from './Modal.module.scss'
-import cn from 'classnames'
 
 const Modal: React.FC<Props> = (props) => {
   const { children, onClose, classes } = props

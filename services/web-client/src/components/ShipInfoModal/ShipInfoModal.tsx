@@ -1,15 +1,17 @@
 import React from 'react'
-import { type Props } from './ShipInfoModal.types'
+import { useRecoilValue } from 'recoil'
+
 import { Modal } from 'components/Common/Modal'
+import { Text } from 'components/Common/Text'
+import { TextVariants } from 'components/Common/Text/Text.types'
+import { ShipBadgesLabels } from 'components/Common/ShipBadgesOptions/ShipBadgesOptions'
+import { NationBadgesLabels } from 'components/Common/NationBadgesOptions/NationBadgesOptions'
+
+import { IMAGES_API_ROOT, WIKIPEDIA_ROOT, WOWSH_WIKI_ROOT } from '../../const/API'
+import { Language } from 'state/Language'
 
 import styles from './ShipInfoModal.module.scss'
-import { IMAGES_API_ROOT, WIKIPEDIA_ROOT, WOWSH_WIKI_ROOT } from '../../const/API'
-import { Text } from '../Common/Text'
-import { TextVariants } from '../Common/Text/Text.types'
-import { useRecoilValue } from 'recoil'
-import { Language } from '../../state/Language'
-import { ShipBadgesLabels } from '../Common/ShipBadgesOptions/ShipBadgesOptions'
-import { NationBadgesLabels } from '../Common/NationBadgesOptions/NationBadgesOptions'
+import { type Props } from './ShipInfoModal.types'
 
 const ShipInfoModal: React.FC<Props> = (props) => {
   const language = useRecoilValue(Language)

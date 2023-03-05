@@ -1,11 +1,13 @@
 import React from 'react'
+import { useRecoilState } from 'recoil'
 
 import { Select } from 'components/Common/Select'
+
 import { LanguageOptions } from 'const/Languages'
 
-import styles from './LanguageSelect.module.scss'
-import { useRecoilState } from 'recoil'
 import { Language } from 'state/Language'
+
+import styles from './LanguageSelect.module.scss'
 
 const LanguageSelect: React.FC = () => {
   const [language, setLanguage] = useRecoilState(Language)

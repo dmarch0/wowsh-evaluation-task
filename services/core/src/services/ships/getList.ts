@@ -9,6 +9,8 @@ interface IArgs {
   name?: string,
   offset?: number,
   limit?: number,
+  minLevel: number,
+  maxLevel: number,
 }
 
 interface IResult {
@@ -17,12 +19,13 @@ interface IResult {
 }
 
 
-export const getList = async ({ types, nations, offset, limit, name }: IArgs): Promise<IResult> => {
+export const getList = async ({ types, nations, offset, limit, name, minLevel, maxLevel }: IArgs): Promise<IResult> => {
   let list = await getShipsListFromApi();
 
   if (types && types.length) list = list.filter(typeFilter(types));
   if (nations && nations.length) list = list.filter(nationFilter(nations));
   if (name) list = list.filter(nameFilter(name));
+  list = list.filter(levelFilter(minLevel, maxLevel))
   const totalCount = list.length;
   if (offset) list = list.slice(offset);
   if (limit) list = list.slice(0, limit);
@@ -45,5 +48,11 @@ function nationFilter(nations: Nations[]) {
 function nameFilter(name: string) {
   return function (ship: Ship) {
     return ship.localization.mark.en.toUpperCase().includes(name.toUpperCase());
+  }
+}
+
+function levelFilter(minLevel: number, maxLevel: number) {
+  return function (ship: Ship) {
+    return ship.level >= minLevel && ship.level <= maxLevel;
   }
 }

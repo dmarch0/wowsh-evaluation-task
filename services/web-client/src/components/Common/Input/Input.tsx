@@ -1,9 +1,9 @@
 import React from 'react'
+import cn from 'classnames'
 
 import type { Props } from './Input.types'
 
 import styles from './Input.module.scss'
-import cn from 'classnames'
 
 const Input: React.FC<Props> = (props) => {
   const { label, name, onChange, placeholder, classes } = props

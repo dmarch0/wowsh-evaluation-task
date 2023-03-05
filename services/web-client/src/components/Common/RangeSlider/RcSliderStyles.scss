@@ -1,0 +1,44 @@
+@use 'src/styles/rem' as *;
+
+.rc-slider {
+  height: rem(16px);
+  width: 100%;
+  position: relative;
+  margin-top: rem(8px);
+
+  &-rail {
+    width: 100%;
+    background: var(--grey2);
+    height: rem(8px);
+    border-radius: rem(4px);
+    position: absolute;
+  }
+
+  &-track {
+    position: absolute;
+    height: rem(8px);
+    background: var(--light-blue);
+  }
+
+  &-handle {
+    width: rem(16px);
+    height: rem(16px);
+    border-radius: 50%;
+    background: var(--white);
+    position: absolute;
+    margin-top: -4px !important;
+    border: rem(4px) solid var(--light-blue);
+    cursor: pointer;
+  }
+
+  &-mark {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 18px;
+  }
+
+  &-mark-text {
+    position: absolute;
+  }
+}

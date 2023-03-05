@@ -7,6 +7,8 @@ export const getRoot = validate({
     nations: Joi.array().items(Joi.string()),
     offset: Joi.string(),
     limit: Joi.string(),
+    minLevel: Joi.string(),
+    maxLevel: Joi.string(),
     name: Joi.string().allow(''),
   })
 });

@@ -1,11 +1,11 @@
 import React from 'react'
+import cn from 'classnames'
 
 import { Button } from 'components/Common/Button'
 
 import type { Props } from './BadgesList.types'
 
 import styles from './BadgesList.module.scss'
-import cn from 'classnames'
 
 const availableColors = [
   'red',

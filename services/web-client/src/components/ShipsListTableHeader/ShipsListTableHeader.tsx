@@ -1,8 +1,8 @@
 import React from 'react'
+import cn from 'classnames'
 
 import gridStyles from 'components/ShipsListTable/Grid.module.scss'
 import styles from './ShipListTableHeader.module.scss'
-import cn from 'classnames'
 
 const ShipsListTableHeader: React.FC = (props) => (
   <div className={cn(gridStyles.ShipListTableGrid, styles.ShipsListTableHeader)} >
