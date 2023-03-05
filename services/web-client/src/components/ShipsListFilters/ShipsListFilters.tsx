@@ -42,6 +42,11 @@ const ShipsListFilters: React.FC = () => {
     setOffset(0)
   }
 
+  const onChangeLevelFilter = ([min, max]: number[]): void => {
+    setShipLevelFilter({ min, max })
+    setOffset(0)
+  }
+
   return (
     <div className={styles.ShipsListFiltersWrapper}>
       <Input
@@ -71,7 +76,7 @@ const ShipsListFilters: React.FC = () => {
         max={shipLevelFilter.max}
         from={1}
         to={11}
-        onChange={([min, max]) => { setShipLevelFilter({ min, max }) }}
+        onChange={onChangeLevelFilter}
         marks={ShipLevels}
         label={<Text label>Filter by level</Text>}
         classes={{ wrapper: styles.Filter }}

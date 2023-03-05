@@ -9,12 +9,12 @@ const RangeSlider: React.FC<Props> = (props) => {
   const { min, max, from, to, onChange, marks, label, classes } = props
 
   const onChangeSlider = (v: number | number[]) => {
-    if (typeof v === "number") {
-      onChange([v]);
-      return;
+    if (typeof v === 'number') {
+      onChange([v])
+      return
     }
 
-    onChange(v);
+    onChange(v)
   }
 
   return (
