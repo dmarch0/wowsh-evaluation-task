@@ -8,8 +8,6 @@ update:
     - wowsh-eval-task
   script:
     - docker login -u gitlab-ci-token -p ${CI_JOB_TOKEN} ${CI_REGISTRY}
-    - ls
-    - pwd
     - cd deploy/staging
     - docker-compose --compatibility -p wowsh-eval-task -f docker-compose.yml up -d --force-recreate --build
   only:
