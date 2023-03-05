@@ -9,7 +9,7 @@
 `proxy` - Traefik proxy
 
 #### `web-client`
-React.js + Typescript SPA. Project structure:
+React.js + Typescript SPA. File structure:
 ```
 .
 ├── build
@@ -24,7 +24,7 @@ React.js + Typescript SPA. Project structure:
 ```
 
 #### `core`
-Node.js caching API betwee client and WoWSh ship list json API
+Node.js caching API between client and WoWSh ship list json API
 ```
 .
 ├── build
