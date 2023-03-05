@@ -58,6 +58,4 @@ docker-compose -f docker-compose.local.yml
 
 
 ### TODO
-1. Add loader to frontend table
-2. Add slider to filter by ship tier
-3. Add error handling modal for failed requests
+1. Add error handling modal for failed requests
